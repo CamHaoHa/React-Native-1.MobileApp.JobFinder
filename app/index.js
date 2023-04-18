@@ -9,13 +9,14 @@ import {
 } from '../components';
 
 import { useState } from 'react';
+
 const Home = () => {
   const router = useRouter();
 
   return (
     <SafeAreaView stye={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
       <Stack.Screen
-        option={{
+        options={{
           headerStyle: { backgroundColor: COLORS.lightWhite },
           headerShasowVisible: false,
           headerLeft: () => (
@@ -30,6 +31,8 @@ const Home = () => {
               dimension="100%"
             />
           ),
+
+          headerTitle: '',
         }}
       />
 
