@@ -8,6 +8,7 @@ npm-debug.*
 *.key
 *.mobileprovision
 *.orig.*
+*/hooks/useFetch.js
 web-build/
 
 # macOS
