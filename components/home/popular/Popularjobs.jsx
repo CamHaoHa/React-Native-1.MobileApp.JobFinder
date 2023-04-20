@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-
+import { useRouter } from 'expo-router';
 import {
   View,
   Text,
@@ -13,9 +13,16 @@ import { SIZES, COLORS } from '../../../constants';
 import styles from './popularjobs.style';
 
 import PopularJobCard from '../../common/cards/popular/PopularJobCard';
+import useFetch from '../../../hooks/useFetch';
+
 const Popularjobs = () => {
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const router = useRouter();
+  const { data, error, isLoading } = useFetch('search', {
+    query: 'React Web Developer',
+    num_pages: 1,
+  });
+
+  // console.log(data);
 
   return (
     <View style={styles.container}>
