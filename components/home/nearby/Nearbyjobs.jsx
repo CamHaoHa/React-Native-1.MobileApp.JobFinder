@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'expo-router';
 import { View, Text, TouchableOpacity, ActivityIndicator } from 'react-native';
 
-import { SIZES, COLORS } from '../../../constants';
+import { COLORS } from '../../../constants';
 import styles from './nearbyjobs.style';
 
 import NearbyJobCard from '../../common/cards/nearby/NearbyJobCard';
