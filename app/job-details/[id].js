@@ -35,7 +35,11 @@ const JobDetails = () => {
   const tabs = ['About', 'Qualifications', 'Responsibilities'];
   const [activeTab, setActiveTab] = useState(tabs[0]);
 
-  const onRefresh = () => {};
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    refetch();
+    setRefreshing(false);
+  }, []);
 
   const displayTabContent = () => {
     switch (activeTab) {
@@ -91,12 +95,12 @@ const JobDetails = () => {
       <>
         <ScrollView
           showsVerticalScrollIndicator={false}
-          // refreshControl={
-          //   // <RefreshControl
-          //   //   refreshing={refreshing}
-          //   //   onRefresh={onRefresh}
-          //   // />
-          // }
+          refreshControl={
+            <RefreshControl
+              refreshing={refreshing}
+              onRefresh={onRefresh}
+            />
+          }
         >
           {isLoading ? (
             <ActivityIndicator
