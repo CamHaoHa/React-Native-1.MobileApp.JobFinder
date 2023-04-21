@@ -11,7 +11,7 @@ import useFetch from '../../../hooks/useFetch';
 const Nearbyjobs = () => {
   const router = useRouter();
   const { data, error, isLoading } = useFetch('search', {
-    query: 'Junior Web Developer Sydney Australia',
+    query: 'Developer in Sydney',
     num_pages: 1,
   });
 
